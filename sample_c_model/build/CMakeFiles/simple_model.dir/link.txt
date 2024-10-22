@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/simple_model.dir/main_program.c.o CMakeFiles/simple_model.dir/simple_model.c.o -o simple_model 

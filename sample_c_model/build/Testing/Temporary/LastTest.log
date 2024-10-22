@@ -1,0 +1,19 @@
+Start testing: Oct 22 18:14 UTC
+----------------------------------------------------------
+1/1 Testing: TestComputeSquare
+1/1 Test: TestComputeSquare
+Command: "/home/ec2-user/sample_c_model/build/test_simple_model"
+Directory: /home/ec2-user/sample_c_model/build
+"TestComputeSquare" start time: Oct 22 18:14 UTC
+Output:
+----------------------------------------------------------
+Testing square of 4: 16
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TestComputeSquare" end time: Oct 22 18:14 UTC
+"TestComputeSquare" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 22 18:14 UTC

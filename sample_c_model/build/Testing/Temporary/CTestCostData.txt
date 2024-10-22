@@ -1,0 +1,2 @@
+TestComputeSquare 2 0.000423317
+---

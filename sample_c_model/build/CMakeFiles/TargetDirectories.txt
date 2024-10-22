@@ -1,0 +1,6 @@
+/home/ec2-user/sample_c_model/build/CMakeFiles/simple_model.dir
+/home/ec2-user/sample_c_model/build/CMakeFiles/test_simple_model.dir
+/home/ec2-user/sample_c_model/build/CMakeFiles/run_tests.dir
+/home/ec2-user/sample_c_model/build/CMakeFiles/test.dir
+/home/ec2-user/sample_c_model/build/CMakeFiles/edit_cache.dir
+/home/ec2-user/sample_c_model/build/CMakeFiles/rebuild_cache.dir
