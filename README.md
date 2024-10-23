@@ -932,3 +932,158 @@ d86feaf80e98: Preparing
 no basic auth credentials
 [ec2-user@ip-172-31-22-10 sample_c_model]$
 ```
+
+```
+WORKING:
+
+[ec2-user@ip-172-31-30-173 ~]$ git --version
+git version 2.40.1
+[ec2-user@ip-172-31-30-173 ~]$ ls
+[ec2-user@ip-172-31-30-173 ~]$ git clone https://github.com/Abinash04/aws_sagemaker.git
+Cloning into 'aws_sagemaker'...
+remote: Enumerating objects: 96, done.
+remote: Counting objects: 100% (96/96), done.
+remote: Compressing objects: 100% (67/67), done.
+remote: Total 96 (delta 25), reused 80 (delta 21), pack-reused 0 (from 0)
+Receiving objects: 100% (96/96), 56.03 KiB | 3.50 MiB/s, done.
+Resolving deltas: 100% (25/25), done.
+[ec2-user@ip-172-31-30-173 ~]$ cd aws_sagemaker/
+[ec2-user@ip-172-31-30-173 aws_sagemaker]$ ls
+README.md  sample_c_model
+[ec2-user@ip-172-31-30-173 aws_sagemaker]$ cd sample_c_model/
+[ec2-user@ip-172-31-30-173 sample_c_model]$ ll
+total 72
+-rw-r--r--. 1 ec2-user ec2-user   654 Oct 23 06:14 CMakeLists.txt
+-rw-r--r--. 1 ec2-user ec2-user   422 Oct 23 06:14 Dockerfile
+drwxr-xr-x. 4 ec2-user ec2-user   176 Oct 23 06:14 build
+-rw-r--r--. 1 ec2-user ec2-user   276 Oct 23 06:14 main_program.c
+-rwxr-xr-x. 1 ec2-user ec2-user 25144 Oct 23 06:14 simple_model
+-rw-r--r--. 1 ec2-user ec2-user   368 Oct 23 06:14 simple_model.c
+-rw-r--r--. 1 ec2-user ec2-user   175 Oct 23 06:14 simple_model.h
+-rwxr-xr-x. 1 ec2-user ec2-user 15848 Oct 23 06:14 simple_model.so
+-rw-r--r--. 1 ec2-user ec2-user   773 Oct 23 06:14 test_model.py
+-rw-r--r--. 1 ec2-user ec2-user   240 Oct 23 06:14 test_simple_model.c
+
+ec2-user@ip-172-31-30-173 sample_c_model]$ sudo groupadd docker
+groupadd: group 'docker' already exists
+[ec2-user@ip-172-31-30-173 sample_c_model]$ sudo usermod -aG docker ec2-user
+[ec2-user@ip-172-31-30-173 sample_c_model]$ newgrp docker
+[ec2-user@ip-172-31-30-173 sample_c_model]$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+c1ec31eb5944: Pull complete 
+Digest: sha256:d211f485f2dd1dee407a80973c8f129f00d54604d2c90732e8e320e5038a0348
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+[ec2-user@ip-172-31-30-173 sample_c_model]$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+hello-world   latest    d2c94e258dcb   17 months ago   13.3kB
+[ec2-user@ip-172-31-30-173 sample_c_model]$ docker build -t simple-model .
+[+] Building 26.4s (9/9) FINISHED                                                                                                                                  docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                         0.0s
+ => => transferring dockerfile: 520B                                                                                                                                         0.0s
+ => [internal] load metadata for docker.io/library/python:3.9-slim                                                                                                           0.4s
+ => [internal] load .dockerignore                                                                                                                                            0.0s
+ => => transferring context: 140B                                                                                                                                            0.0s
+ => [1/4] FROM docker.io/library/python:3.9-slim@sha256:7a9cd42706c174cdcf578880ab9ae3b6551323a7ddbc2a89ad6e5b20a28fbfbe                                                     3.1s
+ => => resolve docker.io/library/python:3.9-slim@sha256:7a9cd42706c174cdcf578880ab9ae3b6551323a7ddbc2a89ad6e5b20a28fbfbe                                                     0.0s
+ => => sha256:e9cf9c2f800532238969770769696b30e2b270f36289aefbc4d807406d8d198f 1.75kB / 1.75kB                                                                               0.0s
+ => => sha256:b9b3c02da6c33a199501e9e4cf8da859d8065718b084ce9ee333e12cfc3b4482 5.43kB / 5.43kB                                                                               0.0s
+ => => sha256:a480a496ba95a197d587aa1d9e0f545ca7dbd40495a4715342228db62b67c4ba 29.13MB / 29.13MB                                                                             0.8s
+ => => sha256:99b8d55c8acd10aa3901ad6f43d5998b882c1f4acaca51f005625b23893f0367 3.51MB / 3.51MB                                                                               0.3s
+ => => sha256:151089ffef3f9093a349049321fa9a4668c29b122d05224e443c5e996fb60da5 14.92MB / 14.92MB                                                                             0.7s
+ => => sha256:7a9cd42706c174cdcf578880ab9ae3b6551323a7ddbc2a89ad6e5b20a28fbfbe 10.41kB / 10.41kB                                                                             0.0s
+ => => sha256:277f520eee4a7406e307add15a461fa57bfe184f595671f364066ab24264cb1a 250B / 250B                                                                                   0.4s
+ => => extracting sha256:a480a496ba95a197d587aa1d9e0f545ca7dbd40495a4715342228db62b67c4ba                                                                                    1.2s
+ => => extracting sha256:99b8d55c8acd10aa3901ad6f43d5998b882c1f4acaca51f005625b23893f0367                                                                                    0.1s
+ => => extracting sha256:151089ffef3f9093a349049321fa9a4668c29b122d05224e443c5e996fb60da5                                                                                    0.7s
+ => => extracting sha256:277f520eee4a7406e307add15a461fa57bfe184f595671f364066ab24264cb1a                                                                                    0.0s
+ => [internal] load build context                                                                                                                                            0.0s
+ => => transferring context: 44.98kB                                                                                                                                         0.0s
+ => [2/4] WORKDIR /app                                                                                                                                                       0.1s
+ => [3/4] COPY . .                                                                                                                                                           0.0s
+ => [4/4] RUN apt-get update -y && apt-get install -y gcc cmake make                                                                                                        17.1s
+ => exporting to image                                                                                                                                                       5.5s 
+ => => exporting layers                                                                                                                                                      5.5s 
+ => => writing image sha256:5159ca1c4dba8738002f6197f4a0d8820d284547c6c88052ec409bc571173ce8                                                                                 0.0s 
+ => => naming to docker.io/library/simple-model                                                                                                                              0.0s 
+[ec2-user@ip-172-31-30-173 sample_c_model]$ docker run simple-model 12
+The square of 12 is 144                                                                                                                                                           
+[ec2-user@ip-172-31-30-173 sample_c_model]$ docker run simple-model 123456789
+The square of 123456789 is 15241578750190521
+
+[ec2-user@ip-172-31-30-173 sample_c_model]$ aws configure
+AWS Access Key ID [None]: xxxxxxxxxxxxxxxxx
+AWS Secret Access Key [None]: xxxxxxxxxxxxxxxx
+Default region name [None]: us-east-2
+Default output format [None]: 
+[ec2-user@ip-172-31-30-173 sample_c_model]$ aws ecr create-repository --repository-name c-2-python-model --region us-east-2
+{
+    "repository": {
+        "repositoryArn": "arn:aws:ecr:us-east-2:471112730019:repository/c-2-python-model",
+        "registryId": "471112730019",
+        "repositoryName": "c-2-python-model",
+        "repositoryUri": "471112730019.dkr.ecr.us-east-2.amazonaws.com/c-2-python-model",
+        "createdAt": "2024-10-23T06:34:10.269000+00:00",
+        "imageTagMutability": "MUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": false
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "AES256"
+        }
+    }
+}
+[ec2-user@ip-172-31-30-173 sample_c_model]$ aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 471112730019.dkr.ecr.us-east-2.amazonaws.com/c-2-python-model
+WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[ec2-user@ip-172-31-30-173 sample_c_model]$ cat /home/ec2-user/.docker/config.json
+{
+        "auths": {
+                "471112730019.dkr.ecr.us-east-2.amazonaws.com": {
+                        "auth": "xxxxxxxxxxxxxxx"
+                }
+        }
+}[ec2-user@ip-172-31-30-173 sample_c_model]$ docker images
+REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
+simple-model   latest    5159ca1c4dba   10 minutes ago   462MB
+hello-world    latest    d2c94e258dcb   17 months ago    13.3kB
+[ec2-user@ip-172-31-30-173 sample_c_model]$ docker tag simple-model:latest 471112730019.dkr.ecr.us-east-2.amazonaws.com/c-2-python-model
+[ec2-user@ip-172-31-30-173 sample_c_model]$ docker push 471112730019.dkr.ecr.us-east-2.amazonaws.com/c-2-python-model
+Using default tag: latest
+The push refers to repository [471112730019.dkr.ecr.us-east-2.amazonaws.com/c-2-python-model]
+b2c51375b639: Pushed 
+1b8158c33af8: Pushed 
+1e105fcc7756: Pushed 
+d86feaf80e98: Pushed 
+19f5accf4683: Pushed 
+0300a07ea341: Pushed 
+98b5f35ea9d3: Pushed 
+latest: digest: sha256:889537e772c7cd65d797b0cbb7a00e6d9aeb4566f477179b0c28df88d61538a9 size: 1786
+[ec2-user@ip-172-31-30-173 sample_c_model]$ 
+
+```
