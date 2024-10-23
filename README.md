@@ -1122,5 +1122,31 @@ change the permission of the key -IMPORTANT.
 chmod 400 /path/to/your-key.pem
 
 
+ECR - upload docker image in registry.
+
+![image](https://github.com/user-attachments/assets/1ad1095a-3b3c-4cd9-bfcb-45fed2696ac0)
+
+![image](https://github.com/user-attachments/assets/e04e1919-587f-4bd6-97cb-e8227c8d2918)
+
+
+Create Model in Sagemaker
+
+![image](https://github.com/user-attachments/assets/0c84ad5b-87ec-402d-9eef-e93dfb63d10d)
+
+![image](https://github.com/user-attachments/assets/1280e77f-34af-4de4-ba76-0df5106ba506)
+
+![image](https://github.com/user-attachments/assets/b2bc9f25-a598-4047-b39a-65934ff16b86)
+
+![image](https://github.com/user-attachments/assets/9ae4119b-bc53-4eaa-a072-ea0a053f94a8)
+
+Endpoint:
+
+![image](https://github.com/user-attachments/assets/050457f8-e7dc-4793-a9f5-1347a3760ac0)
+
+
+Endpoint Configuration:
+
+![image](https://github.com/user-attachments/assets/924802fc-4bc2-411f-947d-6d32957b8712)
+
 
 
