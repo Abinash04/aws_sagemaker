@@ -1084,6 +1084,43 @@ d86feaf80e98: Pushed
 0300a07ea341: Pushed 
 98b5f35ea9d3: Pushed 
 latest: digest: sha256:889537e772c7cd65d797b0cbb7a00e6d9aeb4566f477179b0c28df88d61538a9 size: 1786
-[ec2-user@ip-172-31-30-173 sample_c_model]$ 
+[ec2-user@ip-172-31-30-173 sample_c_model]$
+
+
+AWS ECR push commands:
+Retrieve an authentication token and authenticate your Docker client to your registry. Use the AWS CLI:
+
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 471112730019.dkr.ecr.us-east-2.amazonaws.com
+Note: If you receive an error using the AWS CLI, make sure that you have the latest version of the AWS CLI and Docker installed.
+Build your Docker image using the following command. For information on building a Docker file from scratch see the instructions here . You can skip this step if your image is already built:
+
+docker build -t c-2-python-model .
+After the build completes, tag your image so you can push the image to this repository:
+
+docker tag c-2-python-model:latest 471112730019.dkr.ecr.us-east-2.amazonaws.com/c-2-python-model:latest
+Run the following command to push this image to your newly created AWS repository:
+
+docker push 471112730019.dkr.ecr.us-east-2.amazonaws.com/c-2-python-model:latest
 
 ```
+
+<img width="908" alt="image" src="https://github.com/user-attachments/assets/56c2887f-0d95-4fd6-bbc1-ea11d65e0cba">
+
+<img width="908" alt="image" src="https://github.com/user-attachments/assets/46d6a526-206a-4813-ad5f-375bf092e00f">
+
+<img width="908" alt="image" src="https://github.com/user-attachments/assets/161d273a-9006-4e82-9e83-cf2b908c05ef">
+
+<img width="908" alt="image" src="https://github.com/user-attachments/assets/d50ff7a6-219e-4f54-a074-4357852dbcc3">
+
+<img width="908" alt="image" src="https://github.com/user-attachments/assets/686ffe84-90d0-4579-b92d-f3483ba6f2a3">
+
+
+EC2 connect in VSCode
+
+ssh -i /path/to/your-key.pem ec2-user@<ip_addr>
+change the permission of the key -IMPORTANT.
+chmod 400 /path/to/your-key.pem
+
+
+
+
