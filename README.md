@@ -2,8 +2,17 @@ gcc
 cmake
 make
 
-sudo yum groupinstall "Development Tools"
+sudo yum update -y
+sudo yum install gcc cmake make -y
+sudo yum groupinstall "Development Tools" -y 
+sudo yum install docker -y
 
+sudo systemctl status docker
+sudo systemctl start docker
+sudo systemctl enable docker
+
+sudo usermod -aG docker $USER
+sudo usermod -aG docker ec2-user
 
 
 <img width="1636" alt="image" src="https://github.com/user-attachments/assets/e2379923-0c34-4257-ae58-e2c202496280">
