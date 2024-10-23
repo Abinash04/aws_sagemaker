@@ -1128,6 +1128,10 @@ ECR - upload docker image in registry.
 
 ![image](https://github.com/user-attachments/assets/e04e1919-587f-4bd6-97cb-e8227c8d2918)
 
+IAM:
+
+<img width="1639" alt="image" src="https://github.com/user-attachments/assets/b05bdd7c-65c9-465e-a9b4-a64927dbc1d4">
+
 
 Create Model in Sagemaker
 
@@ -1149,4 +1153,7 @@ Endpoint Configuration:
 ![image](https://github.com/user-attachments/assets/924802fc-4bc2-411f-947d-6d32957b8712)
 
 
+Cloudwatch Log groups:
+
+<img width="1639" alt="image" src="https://github.com/user-attachments/assets/50ad8a2d-72c1-4685-b86e-27abf32a7ae6">
 
