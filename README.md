@@ -1,4 +1,10 @@
-```gcc
+```
+Access AWS resources from VSCode:
+aws configure
+provide access key and secret key or use gimme-aws-creds.
+
+
+gcc
 cmake
 make
 

@@ -18,10 +18,10 @@ payload = json.dumps({'input_number': number})
 # Invoke the endpoint
 try:
     response = runtime.invoke_endpoint(
-        EndpointName=endpoint_name,  # Your endpoint name
-        ContentType='application/json',  # Assuming your model handles plain text
-        Accept='text/plain',  # Expect response in plain text
-        Body=payload  # Send the number as a plain string
+        EndpointName=endpoint_name,
+        ContentType='application/json',
+        Accept='application/json',
+        Body=payload 
     )
 
     # Read and decode the response
